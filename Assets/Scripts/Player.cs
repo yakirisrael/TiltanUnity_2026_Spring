@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float xStep = 1.0f;
     public float yStep = 1.0f;
 
-    public float speed = 5.0f;
+    public float speed = 1.0f;
     
     public float rotateAngle = 1.0f;
 
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         Debug.Log("Triangle Start");
         
         sr = GetComponent<SpriteRenderer>();
-        sr.color = Color.blueViolet;
+       // sr.color = Color.blueViolet;
     }
 
     // Update is called once per frame
@@ -56,6 +56,25 @@ public class Player : MonoBehaviour
             Debug.Log("A");
           //  transform.Translate(-xStep * speed * Time.deltaTime, 0,0);
             transform.Translate(Vector3.left * xStep * speed * Time.deltaTime);
+        }
+        
+        if (Keyboard.current.wKey.isPressed)
+        {
+            
+            Debug.Log("W");
+
+            transform.Translate(Vector3.up * xStep * speed * Time.deltaTime);
+            
+            //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
+        }
+        if (Keyboard.current.sKey.isPressed)
+        {
+            
+            Debug.Log("S");
+
+            transform.Translate(Vector3.down * xStep * speed * Time.deltaTime);
+            
+            //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
         }
 
        // transform.Rotate(new Vector3(0, 0, 1), rotateAngle);

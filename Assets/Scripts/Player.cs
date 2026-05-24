@@ -13,12 +13,16 @@ public class Player : MonoBehaviour
     public float rotateAngle = 1.0f;
 
     private SpriteRenderer sr;
+    
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         Debug.Log("Triangle Start");
         
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        
        // sr.color = Color.blueViolet;
     }
 
@@ -48,6 +52,7 @@ public class Player : MonoBehaviour
 
             transform.Translate(Vector3.right * xStep * speed * Time.deltaTime);
             
+            animator.Play("PlayerWalk");
           //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
         }
         
@@ -56,6 +61,7 @@ public class Player : MonoBehaviour
             Debug.Log("A");
           //  transform.Translate(-xStep * speed * Time.deltaTime, 0,0);
             transform.Translate(Vector3.left * xStep * speed * Time.deltaTime);
+            animator.Play("PlayerWalk");
         }
         
         if (Keyboard.current.wKey.isPressed)
@@ -65,6 +71,7 @@ public class Player : MonoBehaviour
 
             transform.Translate(Vector3.up * xStep * speed * Time.deltaTime);
             
+            animator.Play("PlayerWalk");
             //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
         }
         if (Keyboard.current.sKey.isPressed)
@@ -74,6 +81,7 @@ public class Player : MonoBehaviour
 
             transform.Translate(Vector3.down * xStep * speed * Time.deltaTime);
             
+            animator.Play("PlayerWalk");
             //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
         }
 

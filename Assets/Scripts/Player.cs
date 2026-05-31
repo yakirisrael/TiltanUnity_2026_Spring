@@ -15,15 +15,58 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr;
     
     private Animator animator;
+
+    private Vector3 originalScale;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private int Horizonal;
+    private int vertical;
+
+    void MoveCharacter(int horizonal, int vertical)
+    {
+        if (horizonal == 0 && vertical == 0) return;
+
+        if (horizonal > 0)
+            transform.Translate(Vector3.right * xStep * speed * Time.deltaTime);
+
+        if (horizonal < 0)
+            transform.Translate(Vector3.left * xStep * speed * Time.deltaTime);
+        
+        if (vertical > 0)
+            transform.Translate(Vector3.up * xStep * speed * Time.deltaTime);
+
+        if (vertical < 0)
+            transform.Translate(Vector3.down * xStep * speed * Time.deltaTime);
+    }
+
+
+    void FlipCharacter(bool flip)
+    {
+        if (flip)
+        {
+            transform.localScale = new Vector3(
+                -originalScale.x,
+                originalScale.y,
+                originalScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(
+                originalScale.x,
+                originalScale.y,
+                originalScale.z);
+        }
+    }
+
     void Awake()
     {
         Debug.Log("Triangle Start");
         
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        
-       // sr.color = Color.blueViolet;
+        originalScale = transform.localScale;
+
+        // sr.color = Color.blueViolet;
     }
 
     // Update is called once per frame
@@ -47,10 +90,9 @@ public class Player : MonoBehaviour
        
         if (Keyboard.current.dKey.isPressed)
         {
-            
             Debug.Log("D");
-
-            transform.Translate(Vector3.right * xStep * speed * Time.deltaTime);
+            MoveCharacter(1, 0);
+            FlipCharacter(false);
             
             animator.Play("PlayerWalk");
           //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
@@ -60,7 +102,10 @@ public class Player : MonoBehaviour
         {
             Debug.Log("A");
           //  transform.Translate(-xStep * speed * Time.deltaTime, 0,0);
-            transform.Translate(Vector3.left * xStep * speed * Time.deltaTime);
+            MoveCharacter(-1, 0);
+            FlipCharacter(true);
+
+            
             animator.Play("PlayerWalk");
         }
         
@@ -69,8 +114,7 @@ public class Player : MonoBehaviour
             
             Debug.Log("W");
 
-            transform.Translate(Vector3.up * xStep * speed * Time.deltaTime);
-            
+            MoveCharacter(0, 1);
             animator.Play("PlayerWalk");
             //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
         }
@@ -79,8 +123,7 @@ public class Player : MonoBehaviour
             
             Debug.Log("S");
 
-            transform.Translate(Vector3.down * xStep * speed * Time.deltaTime);
-            
+            MoveCharacter(0, -1);
             animator.Play("PlayerWalk");
             //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
         }

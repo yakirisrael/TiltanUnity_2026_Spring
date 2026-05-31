@@ -21,10 +21,38 @@ public class Player : MonoBehaviour
 
     private int Horizonal;
     private int vertical;
+    
+    string punchAnimation = "PlayerPunch";
 
+    bool IsAnimationFinished(string animationName)
+    {
+        // get the info of the current runnning animation state
+        AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
+        
+        // if it's not the animation we are looking for, count it as finished
+        if (!info.IsName(animationName)) return true;
+        
+        // check if the current animation is finished (almost)
+        if (info.normalizedTime >0.95f) return true;
+        
+        // animation is still running
+        return false;
+    }
+
+    // move the character according to:
+    // -1 - move left, or down
+    // 1 - move right, or up
     void MoveCharacter(int horizonal, int vertical)
     {
-        if (horizonal == 0 && vertical == 0) return;
+        if (horizonal == 0 && vertical == 0)
+        {
+            // WASD was not pressed, play idle animation
+            animator.Play("PlayerIdle");
+            return;
+        }
+        
+        // WASD pressed, play walk animation
+        animator.Play("PlayerWalk");
 
         if (horizonal > 0)
             transform.Translate(Vector3.right * xStep * speed * Time.deltaTime);
@@ -40,6 +68,7 @@ public class Player : MonoBehaviour
     }
 
 
+    // if need to flip change x scale to negative
     void FlipCharacter(bool flip)
     {
         if (flip)
@@ -62,8 +91,11 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Triangle Start");
         
+        // get all components
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        
+        // save the original scale of the player
         originalScale = transform.localScale;
 
         // sr.color = Color.blueViolet;
@@ -77,8 +109,7 @@ public class Player : MonoBehaviour
         
       //  Debug.Log(Mouse.current.position.ReadValue());
 
-        Debug.Log( Mouse.current.scroll.ReadValue())
-            ;
+        Debug.Log( Mouse.current.scroll.ReadValue()) ;
        /* if (Mouse.current.scroll.ReadValue().y > 0)
             Debug.Log("Scroll up");
         
@@ -86,50 +117,55 @@ public class Player : MonoBehaviour
             Debug.Log("Scroll down");
         */
        
-       //transform.eulerAngles = new Vector3(0,0, 90);
-       
-        if (Keyboard.current.dKey.isPressed)
+   
+
+       // check if the mouse left button was pressed in this frame
+       if (Mouse.current.leftButton.wasPressedThisFrame)
+       {
+           // play punch animation
+           animator.Play(punchAnimation);
+           return;
+       }
+
+       //if the punch animation is still running don't do anything
+       if (!IsAnimationFinished(punchAnimation)) return;
+
+       // check if WASD was pressed
+       bool isWASD_Pressed = false;
+       if (Keyboard.current.dKey.isPressed)
         {
             Debug.Log("D");
             MoveCharacter(1, 0);
             FlipCharacter(false);
-            
-            animator.Play("PlayerWalk");
-          //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
+            isWASD_Pressed = true;
+
+            //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
         }
         
         if (Keyboard.current.aKey.isPressed)
         {
-            Debug.Log("A");
-          //  transform.Translate(-xStep * speed * Time.deltaTime, 0,0);
             MoveCharacter(-1, 0);
             FlipCharacter(true);
-
-            
-            animator.Play("PlayerWalk");
+            isWASD_Pressed = true;
         }
         
         if (Keyboard.current.wKey.isPressed)
         {
-            
-            Debug.Log("W");
-
             MoveCharacter(0, 1);
-            animator.Play("PlayerWalk");
-            //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
+             isWASD_Pressed = true;
         }
         if (Keyboard.current.sKey.isPressed)
         {
             
-            Debug.Log("S");
-
             MoveCharacter(0, -1);
-            animator.Play("PlayerWalk");
-            //  transform.Translate(xStep * speed * Time.deltaTime, 0,0);
+            isWASD_Pressed = true;
         }
 
-       // transform.Rotate(new Vector3(0, 0, 1), rotateAngle);
-        
-       
+        if  (!isWASD_Pressed)
+            MoveCharacter(0, 0);
+
+        // transform.Rotate(new Vector3(0, 0, 1), rotateAngle);
+
+
     }
 }

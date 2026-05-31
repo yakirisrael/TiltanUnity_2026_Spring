@@ -7,6 +7,7 @@
     <list default="true" id="a3ada6af-2ed3-49db-9c7b-e2ebe83662da" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TiltanUnity_2026_Spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TiltanUnity_2026_Spring/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Punch/punch1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Punch/punch1.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +16,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@21a28c3a6c83/InputSystem/Devices/Keyboard.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -109,7 +113,7 @@
       <updated>1779640212215</updated>
       <workItem from="1779640213285" duration="430000" />
       <workItem from="1780245207044" duration="225000" />
-      <workItem from="1780245673246" duration="1149000" />
+      <workItem from="1780245673246" duration="3929000" />
     </task>
     <servers />
   </component>

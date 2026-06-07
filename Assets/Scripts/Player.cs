@@ -57,13 +57,16 @@ public class Player : MonoBehaviour
     {
         if (horizonal == 0 && vertical == 0)
         {
+            animator.SetBool("IsWalking", false);
+            
             if (health > 20) animator.SetBool("IsDying", false);
             else animator.SetBool("IsDying", true);
             return;
         }
-        
+       
         // WASD pressed, play walk animation
-        animator.Play("PlayerWalk");
+        animator.SetBool("IsWalking", true);
+        //animator.Play("PlayerWalk");
 
         if (horizonal > 0)
             transform.Translate(Vector3.right * xStep * speed * Time.deltaTime);

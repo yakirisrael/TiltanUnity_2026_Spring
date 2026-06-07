@@ -24,6 +24,17 @@ public class Player : MonoBehaviour
     
     string punchAnimation = "PlayerPunch";
 
+    public int health = 100;
+    
+    public int score = 0;
+    
+    public HUD hud;
+
+    void AddScore(int amount)
+    {
+        score += amount;
+    }
+
     bool IsAnimationFinished(string animationName)
     {
         // get the info of the current runnning animation state
@@ -46,8 +57,8 @@ public class Player : MonoBehaviour
     {
         if (horizonal == 0 && vertical == 0)
         {
-            // WASD was not pressed, play idle animation
-            animator.Play("PlayerIdle");
+            if (health > 20) animator.SetBool("IsDying", false);
+            else animator.SetBool("IsDying", true);
             return;
         }
         
@@ -95,6 +106,8 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         
+        
+        
         // save the original scale of the player
         originalScale = transform.localScale;
 
@@ -122,6 +135,7 @@ public class Player : MonoBehaviour
        // check if the mouse left button was pressed in this frame
        if (Mouse.current.leftButton.wasPressedThisFrame)
        {
+           AddScore(10);
            // play punch animation
            animator.Play(punchAnimation);
            return;

@@ -17,8 +17,8 @@ public class HUD : MonoBehaviour
         
     }
 
-    void UpdateScore(int score)
+    public void UpdateScore(int score)
     {
-        ScoreText.text = score.ToString();
+        ScoreText.text = "Score: " + score.ToString();
     }
 }

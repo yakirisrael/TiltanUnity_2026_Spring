@@ -33,6 +33,9 @@ public class Player : MonoBehaviour
     void AddScore(int amount)
     {
         score += amount;
+        
+        if (hud)
+            hud.UpdateScore(score);
     }
 
     bool IsAnimationFinished(string animationName)

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Vector3 = UnityEngine.Vector3;
@@ -25,10 +26,37 @@ public class Player : MonoBehaviour
     string punchAnimation = "PlayerPunch";
 
     public int health = 100;
-    
+    public int MaxHealth = 100;
+
+    public int souls = 5;
+  
     public int score = 0;
     
     public HUD hud;
+
+    
+
+    void AddHP(int amount)
+    {
+        health += amount;
+        health = Mathf.Clamp(health, 0, MaxHealth);
+        
+        Debug.Log("Health = " +  health);
+    }
+
+    void TakeDamage(int amount)
+    {
+        AddHP(-amount);
+
+        if (health <= 0)
+        {
+            souls--;
+            health = MaxHealth;
+            
+            if (hud)
+                hud.UpdateSouls(souls);
+        }
+    }
 
     void AddScore(int amount)
     {
@@ -107,7 +135,9 @@ public class Player : MonoBehaviour
     void Awake()
     {
         Debug.Log("Triangle Start");
-        
+
+        InitPlayerData();
+
         // get all components
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -120,6 +150,16 @@ public class Player : MonoBehaviour
         // sr.color = Color.blueViolet;
     }
 
+    private void InitPlayerData()
+    {
+        if (hud)
+        {
+            // TODO - update health
+            hud.UpdateScore(0);
+            hud.UpdateSouls(souls);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -128,7 +168,7 @@ public class Player : MonoBehaviour
         
       //  Debug.Log(Mouse.current.position.ReadValue());
 
-        Debug.Log( Mouse.current.scroll.ReadValue()) ;
+        //Debug.Log( Mouse.current.scroll.ReadValue()) ;
        /* if (Mouse.current.scroll.ReadValue().y > 0)
             Debug.Log("Scroll up");
         
@@ -144,6 +184,13 @@ public class Player : MonoBehaviour
            AddScore(10);
            // play punch animation
            animator.Play(punchAnimation);
+           return;
+       }
+
+
+       if (Mouse.current.rightButton.wasPressedThisFrame)
+       {
+           TakeDamage(10);
            return;
        }
 

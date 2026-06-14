@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     
     public HUD hud;
 
-    
+    private bool isGamePaused = true;
 
     void AddHP(int amount)
     {
@@ -134,6 +134,8 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 0;
+        
         Debug.Log("Triangle Start");
 
         InitPlayerData();
@@ -163,7 +165,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (isGamePaused) return;
+        
         Vector3 mousePosWorld = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         
       //  Debug.Log(Mouse.current.position.ReadValue());

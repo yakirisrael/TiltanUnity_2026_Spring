@@ -8,6 +8,30 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TiltanUnity_2026_Spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TiltanUnity_2026_Spring/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 01.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Idle/idle1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Idle/idle1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Idle/idle2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Idle/idle2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Idle/idle3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Idle/idle3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Idle/idle4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Idle/idle4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Kick/kick5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Punch/punch1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Punch/punch1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Punch/punch2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Punch/punch2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Punch/punch3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Punch/punch3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk10.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk10.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk9.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Streets of Fight/Sprites/Brawler-Girl/Walk/walk9.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +45,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6567e2a645a94ef68fffcf0e5cb82d14212a00/11/3da0f8c1/Transform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@21a28c3a6c83/InputSystem/Devices/Keyboard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@648b47f96bf1/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -91,13 +116,15 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="23072">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="23072" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -121,6 +148,7 @@
       <workItem from="1780245673246" duration="4708000" />
       <workItem from="1780851415037" duration="2646000" />
       <workItem from="1781454322836" duration="3875000" />
+      <workItem from="1782059802560" duration="4373000" />
     </task>
     <servers />
   </component>

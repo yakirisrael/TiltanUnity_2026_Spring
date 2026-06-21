@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     public HUD hud;
 
     private bool isGamePaused = true;
+    
+    public Collider2D walkableArea;
 
     void AddHP(int amount)
     {
@@ -99,17 +101,31 @@ public class Player : MonoBehaviour
         animator.SetBool("IsWalking", true);
         //animator.Play("PlayerWalk");
 
+        Vector3 offset = Vector3.zero;
+        
         if (horizonal > 0)
-            transform.Translate(Vector3.right * xStep * speed * Time.deltaTime);
+            offset = Vector3.right * xStep * speed * Time.deltaTime;
 
         if (horizonal < 0)
-            transform.Translate(Vector3.left * xStep * speed * Time.deltaTime);
+            offset = Vector3.left * xStep * speed * Time.deltaTime;
         
         if (vertical > 0)
-            transform.Translate(Vector3.up * xStep * speed * Time.deltaTime);
+            offset = Vector3.up * xStep * speed * Time.deltaTime;
 
         if (vertical < 0)
-            transform.Translate(Vector3.down * xStep * speed * Time.deltaTime);
+            offset = Vector3.down * xStep * speed * Time.deltaTime;
+        
+        // check if in walkable area
+        Vector3 targetPosition = transform.position + offset;
+        
+
+        if (CanMove(offset, targetPosition))
+            transform.Translate(offset);
+    }
+
+    private bool CanMove(Vector3 offset, Vector3 targetPosition)
+    {
+        return offset != Vector3.zero && walkableArea.OverlapPoint(targetPosition);
     }
 
 
@@ -134,10 +150,6 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        Time.timeScale = 0;
-        
-        Debug.Log("Triangle Start");
-
         InitPlayerData();
 
         // get all components
@@ -165,7 +177,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isGamePaused) return;
+     //   if (isGamePaused) return;
         
         Vector3 mousePosWorld = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         
@@ -204,7 +216,7 @@ public class Player : MonoBehaviour
        bool isWASD_Pressed = false;
        if (Keyboard.current.dKey.isPressed)
         {
-            Debug.Log("D");
+          //  Debug.Log("D");
             MoveCharacter(1, 0);
             FlipCharacter(false);
             isWASD_Pressed = true;

@@ -1,20 +1,24 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
 
     public int amount = 20;
-    public float offset = 10;
+    public float offset = 0.2f;
+    public float timeBetweenSpawns = 1;
     public GameObject enemyPrefab;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    void CreateEnemies()
+    IEnumerator CreateEnemies()
     {
         Vector3 StartPosition = transform.position;
 
         for (int i = 0; i < amount; i++)
         {
             CreateEnemy(StartPosition, i);
+            yield return new WaitForSeconds(timeBetweenSpawns);
         }
     }
 
@@ -30,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        CreateEnemies();
+        StartCoroutine(CreateEnemies());
     }
 
     // Update is called once per frame

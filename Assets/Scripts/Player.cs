@@ -195,6 +195,13 @@ public class Player : MonoBehaviour
             rb.AddForce( forceX + forceY );
         }
     }
+    
+
+
+    public void PlayAttackSFX(AudioClip clip)
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()

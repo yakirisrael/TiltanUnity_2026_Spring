@@ -1,4 +1,4 @@
-using System.Numerics;
+
 using Unity.Mathematics.Geometry;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -37,6 +37,11 @@ public class Player : MonoBehaviour
     private bool isGamePaused = true;
     
     public Collider2D walkableArea;
+    
+    private Rigidbody2D rb;
+    
+    public float jumpForceY = 180.0f;
+    public float jumpForceX = 50.0f;
 
     void AddHP(int amount)
     {
@@ -86,8 +91,12 @@ public class Player : MonoBehaviour
     // move the character according to:
     // -1 - move left, or down
     // 1 - move right, or up
+    
+    int horizontalDirection = 0; 
     void MoveCharacter(int horizonal, int vertical)
     {
+        horizontalDirection = horizonal;
+        
         if (horizonal == 0 && vertical == 0)
         {
             animator.SetBool("IsWalking", false);
@@ -155,6 +164,7 @@ public class Player : MonoBehaviour
         // get all components
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         
         
         
@@ -171,6 +181,18 @@ public class Player : MonoBehaviour
             // TODO - update health
             hud.UpdateScore(0);
             hud.UpdateSouls(souls);
+        }
+    }
+
+    void Jump()
+    {
+        if (rb != null)
+        {
+            Debug.Log("horizontal=" + horizontalDirection);
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            Vector2 forceX = new Vector2(horizontalDirection * jumpForceX, 0);
+            Vector2 forceY = new Vector2(0, jumpForceY);
+            rb.AddForce( forceX + forceY );
         }
     }
 
@@ -192,6 +214,7 @@ public class Player : MonoBehaviour
         */
        
    
+
 
        // check if the mouse left button was pressed in this frame
        if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -245,6 +268,11 @@ public class Player : MonoBehaviour
 
         if  (!isWASD_Pressed)
             MoveCharacter(0, 0);
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            Jump();
+        }
 
         // transform.Rotate(new Vector3(0, 0, 1), rotateAngle);
 

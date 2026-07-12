@@ -2,6 +2,14 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    [Header("Level Music")]
+    [SerializeField] private AudioClip Level1Music;
+    [SerializeField] private AudioClip Level2Music;
+    [SerializeField] private AudioClip Level3Music;
+    [Range(0f, 1f)]
+    [SerializeField]
+    private float volume = 1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +31,7 @@ public class PauseMenu : MonoBehaviour
 
     void ResumeGame()
     {
+        AudioManager.Instance.PlayMusic(Level1Music, volume);
         Time.timeScale = 1;
     }
     

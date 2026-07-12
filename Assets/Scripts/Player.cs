@@ -43,6 +43,9 @@ public class Player : MonoBehaviour
     public float jumpForceY = 180.0f;
     public float jumpForceX = 50.0f;
 
+    [SerializeField]
+    private AudioClip PunchClip;
+    
     void AddHP(int amount)
     {
         health += amount;
@@ -228,6 +231,7 @@ public class Player : MonoBehaviour
        {
            AddScore(10);
            // play punch animation
+           AudioManager.Instance.PlaySFX(PunchClip, 1);
            animator.Play(punchAnimation);
            return;
        }
